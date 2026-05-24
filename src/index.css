@@ -1,0 +1,46 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html { scroll-behavior: smooth; }
+  body { @apply bg-slate-50 text-steel-900 font-sans antialiased; }
+  h1, h2, h3, h4 { @apply font-serif; }
+  ::selection { @apply bg-navy-200 text-navy-900; }
+}
+
+@layer components {
+  .section-wrapper  { @apply max-w-7xl mx-auto px-6 lg:px-12; }
+  .section-title    { @apply font-serif text-3xl lg:text-4xl font-bold text-navy-900 tracking-tight; }
+  .section-rule     { @apply w-16 h-0.5 bg-gold-500 mt-3 mb-6; }
+
+  .btn-primary {
+    @apply inline-flex items-center gap-2 px-6 py-3 bg-navy-700 text-white font-sans font-semibold
+           text-sm tracking-wide rounded border border-navy-700 transition-all duration-200
+           hover:bg-navy-800 active:scale-95 focus:outline-none focus:ring-2 focus:ring-navy-500 focus:ring-offset-2;
+  }
+  .btn-secondary {
+    @apply inline-flex items-center gap-2 px-6 py-3 bg-transparent text-navy-700 font-sans
+           font-semibold text-sm tracking-wide rounded border border-navy-700 transition-all
+           duration-200 hover:bg-navy-700 hover:text-white active:scale-95;
+  }
+  .btn-gold {
+    @apply inline-flex items-center gap-2 px-6 py-3 bg-gold-500 text-navy-950 font-sans
+           font-semibold text-sm tracking-wide rounded border border-gold-500 transition-all
+           duration-200 hover:bg-gold-600 active:scale-95;
+  }
+
+  .status-available   { @apply inline-flex items-center gap-1.5 px-2.5 py-1 bg-emerald-50 text-emerald-700 border border-emerald-200 rounded-full text-xs font-mono font-semibold; }
+  .status-in-use      { @apply inline-flex items-center gap-1.5 px-2.5 py-1 bg-blue-50 text-blue-700 border border-blue-200 rounded-full text-xs font-mono font-semibold; }
+  .status-return      { @apply inline-flex items-center gap-1.5 px-2.5 py-1 bg-amber-50 text-amber-700 border border-amber-200 rounded-full text-xs font-mono font-semibold; }
+  .status-maintenance { @apply inline-flex items-center gap-1.5 px-2.5 py-1 bg-red-50 text-red-700 border border-red-200 rounded-full text-xs font-mono font-semibold; }
+
+  .card-formal  { @apply bg-white border border-steel-200 rounded-sm shadow-sm transition-all duration-300 hover:shadow-md hover:border-navy-200; }
+  .input-formal { @apply w-full px-4 py-3 bg-white border border-steel-300 rounded-sm text-steel-900 font-sans text-sm placeholder:text-steel-400 transition-colors duration-200 focus:outline-none focus:border-navy-500 focus:ring-1 focus:ring-navy-500; }
+}
+
+@layer utilities {
+  .scrollbar-formal::-webkit-scrollbar       { width: 6px; }
+  .scrollbar-formal::-webkit-scrollbar-track { @apply bg-steel-100; }
+  .scrollbar-formal::-webkit-scrollbar-thumb { @apply bg-steel-300 rounded-full; }
+}
